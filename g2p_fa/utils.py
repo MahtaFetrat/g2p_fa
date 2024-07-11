@@ -20,8 +20,8 @@ class WordDataset(Dataset):
     def __getitem__(self, idx):
         return self.data[idx]
 
-FA_LETTERS = 'ءآئابتثجحخدذرزسشصضطظعغفقلمنهوُِپچژکگی'
-IPA_LETTERS = 'bdefhijklmnopqstuvxzæɒɡɾʃʒʔʰː'
+FA_LETTERS = 'ءآئابتثجحخدذرزسشصضطظعغفقلمنهوُِپچژکگی '
+IPA_LETTERS = 'bdefhijklmnopqstuvxzæɒɡɾʃʒʔʰː '
 PAD = 0
 START = 1
 END = 2
