@@ -2,7 +2,12 @@ import os
 import torch
 from torch.utils.data import Dataset
 
-MAX_LEN = 30
+FA_LETTERS = 'ءآئابتثجحخدذرزسشصضطظعغفقلمنهوُِپچژکگی '
+IPA_LETTERS = 'bdefhijklmnopqstuvxzæɒɡɾʃʒʔʰː '
+PAD = 0
+START = 1
+END = 2
+MAX_LEN = 40
 THIS_DIR, _ = os.path.split(__file__)
 MODEL_PATH = os.path.join(THIS_DIR, "data/weights")
 
@@ -19,12 +24,6 @@ class WordDataset(Dataset):
 
     def __getitem__(self, idx):
         return self.data[idx]
-
-FA_LETTERS = 'ءآئابتثجحخدذرزسشصضطظعغفقلمنهوُِپچژکگی '
-IPA_LETTERS = 'bdefhijklmnopqstuvxzæɒɡɾʃʒʔʰː '
-PAD = 0
-START = 1
-END = 2
 
 def fa_letter2tensor(letter):
     return FA_LETTERS.find(letter) + 3
